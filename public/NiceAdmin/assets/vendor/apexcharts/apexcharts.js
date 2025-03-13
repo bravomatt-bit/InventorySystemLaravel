@@ -2106,7 +2106,7 @@
 
     // left matrix, right matrix, target matrix which is overwritten
     static matrixMultiply(l, r, o) {
-      // Work out the product directly
+      // Work out the products directly
       const a = l.a * r.a + l.c * r.b;
       const b = l.b * r.a + l.d * r.b;
       const c = l.a * r.c + l.c * r.d;
@@ -18805,7 +18805,7 @@
           // This following products of prime factors method works as follows:
           // We compute the prime factors of the full tick count (tiks), then all the
           // possible products of those factors in order from smallest to biggest,
-          // until we find a product P such that: tiks/P < maxTicks.
+          // until we find a products P such that: tiks/P < maxTicks.
           //
           // Example:
           // Computing products of the prime factors of 30.
@@ -18820,7 +18820,7 @@
           //
           //   tiks = 30 has prime factors [2, 3, 5]
           //   The loop below computes the products [2,3,5,6,15,30].
-          //   The last product of P = 2*3*5 is skipped since 30/P = 1.
+          //   The last products of P = 2*3*5 is skipped since 30/P = 1.
           //   This yields tiks/P = [15,10,6,5,2,1], checked in order until
           //   tiks/P < maxTicks.
           //
@@ -30854,20 +30854,20 @@
   }();
 
   /**
-   * 
+   *
    * @yr/monotone-cubic-spline (https://github.com/YR/monotone-cubic-spline)
-   * 
+   *
    * The MIT License (MIT)
-   * 
+   *
    * Copyright (c) 2015 yr.no
-   * 
+   *
    * Permission is hereby granted, free of charge, to any person obtaining a copy of
    * this software and associated documentation files (the "Software"), to deal in
    * the Software without restriction, including without limitation the rights to
    * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
    * the Software, and to permit persons to whom the Software is furnished to do so,
    * subject to the following conditions:
-   * 
+   *
    * The above copyright notice and this permission notice shall be included in all
    * copies or substantial portions of the Software.
 
