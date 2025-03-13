@@ -66,6 +66,13 @@
                 <span>Categories</span></a>
         </li>
 
+        <!-- Nav Item - Suppliers -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route("supplier.index")}}">
+                <i class="fas fa-fw fa-address-card"></i>
+                <span>Suppliers</span></a>
+        </li>
+
     </ul>
     <!-- End of Sidebar -->
 

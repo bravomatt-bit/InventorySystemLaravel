@@ -66,6 +66,13 @@
                 <span>Categories</span></a>
         </li>
 
+        <!-- Nav Item - Suppliers -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route("supplier.index")}}">
+                <i class="fas fa-fw fa-address-card"></i>
+                <span>Suppliers</span></a>
+        </li>
+
     </ul>
     <!-- End of Sidebar -->
 
@@ -136,7 +143,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Date Created</th>
                         <th scope="col">Date Updated</th>

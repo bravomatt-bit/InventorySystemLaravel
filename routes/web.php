@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware("auth")->group(function () {
@@ -22,3 +23,10 @@ Route::post("/category", [CategoryController::class, "store"])->name("category.s
 Route::get("/category/{category}/edit", [CategoryController::class, "edit"])->name("category.edit");
 Route::put("/category/{category}/update", [CategoryController::class, "update"])->name("category.update");
 Route::delete("/category/{category}/destroy",[CategoryController::class, "destroy"])->name("category.destroy");
+
+Route::get("/supplier", [SupplierController::class, "index"])->name("supplier.index");
+Route::get("/supplier/create", [SupplierController::class, "create"])->name("supplier.create");
+Route::post("/supplier", [SupplierController::class, "store"])->name("supplier.store");
+Route::get("/supplier/{supplier}/edit", [SupplierController::class, "edit"])->name("supplier.edit");
+Route::put("/supplier/{supplier}/update", [SupplierController::class, "update"])->name("supplier.update");
+Route::delete("/supplier/{supplier}/destroy",[SupplierController::class, "destroy"])->name("supplier.destroy");
