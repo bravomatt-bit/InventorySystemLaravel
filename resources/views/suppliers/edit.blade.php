@@ -60,17 +60,24 @@
         </li>
 
         <!-- Nav Item - Category -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="{{route("category.index")}}">
                 <i class="fas fa-fw fa-arrow-right"></i>
                 <span>Categories</span></a>
         </li>
 
         <!-- Nav Item - Suppliers -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="{{route("supplier.index")}}">
                 <i class="fas fa-fw fa-address-card"></i>
                 <span>Suppliers</span></a>
+        </li>
+
+        <!-- Nav Item - Warehouses -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route("warehouse.index")}}">
+                <i class="fas fa-fw fa-chart-pie"></i>
+                <span>Warehouses</span></a>
         </li>
 
     </ul>
@@ -134,7 +141,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Update Category</h5>
+                        <h5 class="card-title">Update Supplier</h5>
 
                         <!-- Horizontal Form -->
                         <form method="post" action="{{route("supplier.update", ["supplier" => $supplier])}}">

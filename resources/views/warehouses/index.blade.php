@@ -60,7 +60,7 @@
         </li>
 
         <!-- Nav Item - Category -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="{{route("category.index")}}">
                 <i class="fas fa-fw fa-arrow-right"></i>
                 <span>Categories</span></a>
@@ -74,7 +74,7 @@
         </li>
 
         <!-- Nav Item - Warehouses -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="{{route("warehouse.index")}}">
                 <i class="fas fa-fw fa-chart-pie"></i>
                 <span>Warehouses</span></a>
@@ -139,59 +139,77 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Update Category</h5>
-
-                        <!-- Horizontal Form -->
-                        <form method="post" action="{{route("category.update", ["category" => $category])}}">
-                            @csrf
-                            @method('put')
-                            <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputText" name="name" value="{{$category->name}}">
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Update</button>
-                                <button type="reset" class="btn btn-secondary">Clear</button>
-                                <a href="{{route("category.index")}}" class="btn btn-danger">Cancel</a>
-                            </div>
-                        </form>
-                        <!-- End Horizontal Form -->
-
-                    </div>
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Warehouses</h1>
+                    <a href="{{route("warehouse.create")}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Add Warehouse</a>
                 </div>
 
-                <!-- Content Row -->
-                <div class="row">
+                <!-- Default Table -->
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">address</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($warehouses as $warehouse)
+                        <tr>
+                            <td>{{$warehouse->id}}</td>
+                            <td>{{$warehouse->name}}</td>
+                            <td>{{$warehouse->address}}</td>
+                            <td>
+                                <a href="{{route("warehouse.edit", ["warehouse" => $warehouse])}}" class="btn btn-primary">Edit</a>
+                            </td>
+                            <td>
+                                <form method="post" action="{{route("warehouse.destroy", ['warehouse' => $warehouse])}}">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                <!-- End Default Table Example -->
+            </div>
+        </div>
 
-                    <!-- Content Column -->
-                    <div class="col-lg-6 mb-4">
 
-                    </div>
+        <!-- Content Row -->
+        <div class="row">
 
-                </div>
+            <!-- Content Column -->
+            <div class="col-lg-6 mb-4">
 
             </div>
-            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Main Content -->
-
-        {{--        <!-- Footer -->--}}
-        {{--        <footer class="sticky-footer bg-white">--}}
-        {{--            <div class="container my-auto">--}}
-        {{--                <div class="copyright text-center my-auto">--}}
-        {{--                    <span>Copyright &copy; Your Website 2021</span>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--        </footer>--}}
-        {{--        <!-- End of Footer -->--}}
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{{--        <!-- Footer -->--}}
+{{--        <footer class="sticky-footer bg-white">--}}
+{{--            <div class="container my-auto">--}}
+{{--                <div class="copyright text-center my-auto">--}}
+{{--                    <span>Copyright &copy; Your Website 2021</span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </footer>--}}
+{{--        <!-- End of Footer -->--}}
+
+</div>
+<!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->

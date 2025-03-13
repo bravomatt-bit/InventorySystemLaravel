@@ -73,6 +73,13 @@
                 <span>Suppliers</span></a>
         </li>
 
+        <!-- Nav Item - Warehouses -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route("warehouse.index")}}">
+                <i class="fas fa-fw fa-chart-pie"></i>
+                <span>Warehouses</span></a>
+        </li>
+
     </ul>
     <!-- End of Sidebar -->
 

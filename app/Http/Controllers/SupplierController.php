@@ -24,7 +24,7 @@ class SupplierController extends Controller
             'address' => 'required'
         ]);
 
-        $newCategory = Supplier::create($data);
+        $newSupplier = Supplier::create($data);
 
         return redirect()->route('supplier.index');
     }

@@ -60,7 +60,7 @@
         </li>
 
         <!-- Nav Item - Category -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="{{route("category.index")}}">
                 <i class="fas fa-fw fa-arrow-right"></i>
                 <span>Categories</span></a>
@@ -74,7 +74,7 @@
         </li>
 
         <!-- Nav Item - Warehouses -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="{{route("warehouse.index")}}">
                 <i class="fas fa-fw fa-chart-pie"></i>
                 <span>Warehouses</span></a>
@@ -141,22 +141,30 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Update Category</h5>
+                        <h5 class="card-title">Add Warehouse</h5>
 
                         <!-- Horizontal Form -->
-                        <form method="post" action="{{route("category.update", ["category" => $category])}}">
+                        <form method="post" action="{{route("warehouse.store")}}">
                             @csrf
-                            @method('put')
+                            @method('post')
                             <div class="row mb-3">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputText" name="name" value="{{$category->name}}">
+                                    <input type="text" class="form-control" id="inputText" name="name">
                                 </div>
                             </div>
+
+                            <div class="row mb-3">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputText" name="address">
+                                </div>
+                            </div>
+
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Clear</button>
-                                <a href="{{route("category.index")}}" class="btn btn-danger">Cancel</a>
+                                <a href="{{route("warehouse.index")}}" class="btn btn-danger">Cancel</a>
                             </div>
                         </form>
                         <!-- End Horizontal Form -->
