@@ -61,7 +61,7 @@
 
         <!-- Nav Item - Category -->
         <li class="nav-item active">
-            <a class="nav-link" href="{{route("categories.index")}}">
+            <a class="nav-link" href="{{route("category.index")}}">
                 <i class="fas fa-fw fa-arrow-right"></i>
                 <span>Categories</span></a>
         </li>
@@ -130,7 +130,7 @@
                         <h5 class="card-title">Create Category</h5>
 
                         <!-- Horizontal Form -->
-                        <form method="post" action="{{route("categories.store")}}">
+                        <form method="post" action="{{route("category.store")}}">
                             @csrf
                             @method('post')
                             <div class="row mb-3">
@@ -142,7 +142,7 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Clear</button>
-                                <a href="{{route("categories.index")}}" class="btn btn-danger">Cancel</a>
+                                <a href="{{route("category.index")}}" class="btn btn-danger">Cancel</a>
                             </div>
                         </form>
                         <!-- End Horizontal Form -->

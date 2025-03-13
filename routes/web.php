@@ -16,6 +16,9 @@ Route::post("/login", [AuthController::class, "loginPost"])->name("login.post");
 Route::get("/register", [AuthController::class, "register"])->name("register");
 Route::post("/register", [AuthController::class, "registerPost"])->name("register.post");
 
-Route::get("/categories", [CategoryController::class, "index"])->name("categories.index");
-Route::get("/categories/create", [CategoryController::class, "create"])->name("categories.create");
-Route::post("/categories", [CategoryController::class, "store"])->name("categories.store");
+Route::get("/category", [CategoryController::class, "index"])->name("category.index");
+Route::get("/category/create", [CategoryController::class, "create"])->name("category.create");
+Route::post("/category", [CategoryController::class, "store"])->name("category.store");
+Route::get("/category/{category}/edit", [CategoryController::class, "edit"])->name("category.edit");
+Route::put("/category/{category}/update", [CategoryController::class, "update"])->name("category.update");
+Route::delete("/category/{category}/destroy",[CategoryController::class, "destroy"])->name("category.destroy");

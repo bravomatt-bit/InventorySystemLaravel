@@ -61,7 +61,7 @@
 
         <!-- Nav Item - Category -->
         <li class="nav-item">
-            <a class="nav-link" href="{{route("categories.index")}}">
+            <a class="nav-link" href="{{route("category.index")}}">
                 <i class="fas fa-fw fa-arrow-right"></i>
                 <span>Categories</span></a>
         </li>

@@ -61,7 +61,7 @@
 
         <!-- Nav Item - Category -->
         <li class="nav-item active">
-            <a class="nav-link" href="{{route("categories.index")}}">
+            <a class="nav-link" href="{{route("category.index")}}">
                 <i class="fas fa-fw fa-arrow-right"></i>
                 <span>Categories</span></a>
         </li>
@@ -128,7 +128,7 @@
             <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Categories</h1>
-                    <a href="{{route("categories.create")}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    <a href="{{route("category.create")}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Create Category</a>
                 </div>
 
@@ -138,44 +138,31 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
+                        <th scope="col">Date Created</th>
+                        <th scope="col">Date Updated</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($categories as $category)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Brandon Jacob</td>
-                        <td>Designer</td>
-                        <td>28</td>
-                        <td>2016-05-25</td>
+                        <td>{{$category->id}}</td>
+                        <td>{{$category->name}}</td>
+                        <td>{{$category->created_at}}</td>
+                        <td>{{$category->updated_at}}</td>
+                        <td>
+                            <a href="{{route("category.edit", ["category" => $category])}}" class="btn btn-primary">Edit</a>
+                        </td>
+                        <td>
+                            <form method="post" action="{{route("category.destroy", ['category' => $category])}}">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Bridie Kessler</td>
-                        <td>Developer</td>
-                        <td>35</td>
-                        <td>2014-12-05</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Ashleigh Langosh</td>
-                        <td>Finance</td>
-                        <td>45</td>
-                        <td>2011-08-12</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Angus Grady</td>
-                        <td>HR</td>
-                        <td>34</td>
-                        <td>2012-06-11</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Raheem Lehner</td>
-                        <td>Dynamic Division Officer</td>
-                        <td>47</td>
-                        <td>2011-04-19</td>
-                    </tr>
+                    @endforeach
                     </tbody>
                 </table>
                 <!-- End Default Table Example -->
